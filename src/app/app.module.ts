@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,10 @@ import { NewTrainingComponent } from './training/new-training/new-training.compo
 import { TrainingComponent } from './training/training.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
+import { AuthInterceptor } from './auth/auth-interceptor';
+import { AppManagerComponent } from './app-manager/app-manager.component';
+import { NavbarComponent } from './header/navbar/navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,15 +27,19 @@ import { WelcomeComponent } from './welcome/welcome.component';
     PastTrainingComponent,
     NewTrainingComponent,
     TrainingComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AppManagerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CustomModule
+    CustomModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
