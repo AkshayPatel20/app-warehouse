@@ -14,6 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatSelectModule
   ],
   exports: [
     FlexLayoutModule,
@@ -42,7 +46,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatSelectModule
   ]
 })
 export class CustomModule { }

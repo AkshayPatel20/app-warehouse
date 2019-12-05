@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">
 
   <mat-toolbar-row>
-    <span>App Warehouse</span>
+
+    <span>{{ appTitle }}</span>
     <span class="example-spacer"></span>
 
     <button mat-button [matMenuTriggerFor]="app_list">APP COLLECTION</button>
@@ -9,7 +10,6 @@
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
     </button>
-
   </mat-toolbar-row>
 
 
@@ -17,6 +17,10 @@
 
 
 <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink=''>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+    </button>
     <button mat-menu-item (click)="onLogout()">
       <mat-icon>input</mat-icon>
       <span>Log Off</span>
@@ -26,7 +30,7 @@
 
 
 <mat-menu #app_list="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="training">Training</button>
+  <button mat-menu-item [matMenuTriggerFor]="training" routerLink='trainingApp/training'>Training</button>
 </mat-menu>
 
 <mat-menu #training="matMenu">

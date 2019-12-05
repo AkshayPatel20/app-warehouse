@@ -19,6 +19,11 @@ import { AuthInterceptor } from './auth/auth-interceptor';
 import { AppManagerComponent } from './app-manager/app-manager.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
 
+// Firebase Library Added here
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +42,9 @@ import { NavbarComponent } from './header/navbar/navbar.component';
     BrowserAnimationsModule,
     CustomModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
