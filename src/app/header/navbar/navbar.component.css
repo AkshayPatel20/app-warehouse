@@ -5,3 +5,27 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.example-header-image {
+  background-color: #D21A5D;
+  background-size: cover;
+  width: 32px;
+  border-radius: 50%;
+  color: White;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.example-header-image:hover {
+  border: 2px solid #E8ECFF;
+}
+
+mat-card-title i{
+  align-items: center;
+  font-size: 40px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 8px;
+}

@@ -9,10 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './auth/signin/signin.component';
 
 import { CustomModule } from './app.custommodule';
-import { CurrentTrainingComponent } from './training/current-training/current-training.component';
-import { PastTrainingComponent } from './training/past-training/past-training.component';
-import { NewTrainingComponent } from './training/new-training/new-training.component';
-import { TrainingComponent } from './training/training.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { AuthInterceptor } from './auth/auth-interceptor';
@@ -21,20 +17,25 @@ import { NavbarComponent } from './header/navbar/navbar.component';
 
 // Firebase Library Added here
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
+import { CommunicateComponent } from './modules/communicate/communicate.component';
+import { ComposeBoxComponent } from './modules/communicate/compose-box/compose-box.component';
+
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
-    CurrentTrainingComponent,
-    PastTrainingComponent,
-    NewTrainingComponent,
-    TrainingComponent,
     WelcomeComponent,
     AppManagerComponent,
-    NavbarComponent
+    NavbarComponent,
+    CommunicateComponent,
+    ComposeBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +45,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
+  entryComponents: [ComposeBoxComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

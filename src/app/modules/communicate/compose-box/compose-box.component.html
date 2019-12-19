@@ -1,0 +1,44 @@
+<mat-card class="example-card" *ngIf="progressLoader == false">
+  <mat-card-header>
+    <mat-card-title>New Message</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <span matPrefix>To &nbsp;</span>
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip *ngFor="let email_address of address" [selectable]="selectable"
+                   [removable]="removable" (removed)="remove(email_address)">
+            {{email_address.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Recipients" type="text" matInput
+                  [matChipInputFor]="chipList" #emailrecipients
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-chip-list>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput placeholder="Subject" #emailsubject>
+        <mat-icon matSuffix>subject</mat-icon>
+      </mat-form-field>
+
+
+      <!-- <div [froalaEditor] class="example-full-width"></div> -->
+      <mat-form-field class="example-full-width">
+        <textarea matInput rows="20" #emailbody [froalaEditor]></textarea>
+      </mat-form-field>
+
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button style="background-color: #1A73E8;color: white;" (click)='onComposeEmailSend(emailrecipients.value,emailsubject.value,emailbody.value)'>SEND <i class="material-icons" style="font-size: 12px; margin-left: 5px;">send</i></button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-progress-bar mode="indeterminate" *ngIf="progressLoader == true"></mat-progress-bar>

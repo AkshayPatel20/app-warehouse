@@ -18,7 +18,7 @@ export class AuthServiceService {
     const reqObject = {Usernamelogin, Passwordlogin};
 
     // tslint:disable-next-line: max-line-length
-    this.http.post<{message: string, token: any, flag: string, tokenTimer: number, channel: string}>('http://localhost:3000/api/auth/signin', reqObject)
+    this.http.post<{message: string, token: any, flag: string, tokenTimer: number, channel: string, UserName: string}>('http://localhost:3000/api/auth/signin', reqObject)
         .subscribe((response) => {
           if(response.flag === 'true') {
 
@@ -27,7 +27,7 @@ export class AuthServiceService {
             window.localStorage.setItem('Token', response.token);
             window.localStorage.setItem('AuthStatus', 'true');
             window.localStorage.setItem('AppChannel', response.channel);
-
+            window.localStorage.setItem('UserName', response.UserName);
           } else {
             this.snackBar.open('Invalid credentials', 'X', {duration: 4000});
             // Response Object

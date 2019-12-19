@@ -16,6 +16,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -32,7 +36,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     FlexLayoutModule,
@@ -48,7 +56,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ]
 })
 export class CustomModule { }

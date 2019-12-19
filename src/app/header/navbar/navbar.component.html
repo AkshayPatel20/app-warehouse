@@ -2,14 +2,12 @@
 
   <mat-toolbar-row>
 
-    <span>{{ appTitle }}</span>
+    <mat-card-title><i class="material-icons">wb_auto</i></mat-card-title> <span> {{ appTitle }}</span>
     <span class="example-spacer"></span>
 
-    <button mat-button [matMenuTriggerFor]="app_list">APP COLLECTION</button>
+    <button mat-button [matMenuTriggerFor]="app_list"><i class="material-icons">keyboard_arrow_down</i>APP COLLECTION</button>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
-    </button>
+    <div mat-card-avatar class="example-header-image" mat-icon-button [matMenuTriggerFor]="menu">{{  LoginUserChar | uppercase }}</div>
   </mat-toolbar-row>
 
 
@@ -30,11 +28,6 @@
 
 
 <mat-menu #app_list="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="training" routerLink='trainingApp/training'>Training</button>
+  <button mat-menu-item routerLink='/communication'>Mailing & Messaging</button>
 </mat-menu>
 
-<mat-menu #training="matMenu">
-  <button mat-menu-item>Current training</button>
-  <button mat-menu-item>New Training</button>
-  <button mat-menu-item>Past Training</button>
-</mat-menu>

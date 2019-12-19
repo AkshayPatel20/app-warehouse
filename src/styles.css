@@ -50,3 +50,8 @@ table {
 * {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.bottom-sheet-composebox-container {
+  padding: 0px !important;
+}

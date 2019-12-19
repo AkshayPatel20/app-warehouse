@@ -1,0 +1,28 @@
+.composeBtn {
+  border-radius: 30%;
+  display: inline-flex;
+  font-weight: 500;
+  height: 48px;
+  border-radius: 24px;
+  color: #3c4043;
+  align-items: center;
+  font-size: .875rem;
+  letter-spacing: .25px;
+  background-color: none;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+}
+
+.composeBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 4px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+  transition: linear 0.2;
+}
+
+.tabIcons {
+  font-size: 18px;
+  margin-right: 8px;
+}

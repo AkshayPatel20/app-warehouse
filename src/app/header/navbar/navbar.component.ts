@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   appTitle = 'App Warehouse';
   public href = [];
+  LoginUserChar = '';
 
   constructor(public authService: AuthServiceService, private router: Router) { }
 
@@ -22,6 +23,10 @@ export class NavbarComponent implements OnInit {
     } else {
       this.appTitle = this.href[1].charAt(0).toUpperCase() + this.href[1].slice(1);
     }
+
+    // Getting UsernAme Letter from Username localStorage
+    const LoginUserChar = window.localStorage.getItem('UserName').charAt(0);
+    this.LoginUserChar = LoginUserChar;
 
   }// close nginit
 
