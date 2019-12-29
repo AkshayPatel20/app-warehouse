@@ -9,15 +9,28 @@ import { SigninComponent } from '../../auth/signin/signin.component';
   styleUrls: ['./communicate.component.css']
 })
 export class CommunicateComponent implements OnInit {
+  // RECIVING DATA FROM SENT CHILD
+  sentcount: string;
+  draftcount: string;
 
   constructor(private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
   }
 
+  onsentCountData(data) {
+    this.sentcount = data;
+  }
+
+  ondraftCountData(data){
+    this.draftcount = data;
+  }
+
   // Compose Btn Click
   openEmailBox() {
     this.bottomSheet.open(ComposeBoxComponent, { panelClass: 'bottom-sheet-composebox-container' });
   }// close openEmailBox
+
+
 
 }// close Class

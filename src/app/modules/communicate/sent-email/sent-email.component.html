@@ -1,0 +1,58 @@
+<div class="mat-elevation-z8">
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let sendemail of SentEmails">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          To:&nbsp;&nbsp; <span class="member-count-style">{{ sendemail.recipient_emails.split(',').length }}</span> Person
+        </mat-panel-title>
+        <mat-panel-description>
+          <mat-chip-list><mat-chip class="chipSubject">{{ sendemail.email_subject }}</mat-chip></mat-chip-list>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-card class="mat-card-sentbody">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>App Warehouse</mat-card-title>
+          <mat-card-subtitle>to
+
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" matTooltip="Show Details">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="mail-body" innerHTML="{{ sendemail.email_body }}"></div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- SHOW DETAILS MENU -->
+      <mat-menu #menu="matMenu">
+        <p mat-menu-item>
+          From:
+          <span>App Warehouse</span>
+        </p>
+        <p mat-menu-item >
+          To:
+          <span>{{ sendemail.recipient_emails }}</span>
+        </p>
+        <p mat-menu-item>
+          Date:
+          <span>{{ sendemail.Timestamp.substr(0,sendemail.Timestamp.indexOf('T')) }}</span>
+        </p>
+        <p mat-menu-item>
+          Time:
+          <span>{{ sendemail.Timestamp.substr(sendemail.Timestamp.indexOf('T') + 1) }}</span>
+        </p>
+      </mat-menu>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+
+
+
+</div>

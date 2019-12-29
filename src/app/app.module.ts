@@ -26,6 +26,9 @@ import { CommunicateComponent } from './modules/communicate/communicate.componen
 import { ComposeBoxComponent } from './modules/communicate/compose-box/compose-box.component';
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { SentEmailComponent } from './modules/communicate/sent-email/sent-email.component';
+import { DraftEmailComponent } from './modules/communicate/draft-email/draft-email.component';
+import { ForumMessagesComponent } from './modules/communicate/forum-messages/forum-messages.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     AppManagerComponent,
     NavbarComponent,
     CommunicateComponent,
-    ComposeBoxComponent
+    ComposeBoxComponent,
+    SentEmailComponent,
+    DraftEmailComponent,
+    ForumMessagesComponent
   ],
   imports: [
     BrowserModule,

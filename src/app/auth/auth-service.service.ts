@@ -18,7 +18,7 @@ export class AuthServiceService {
     const reqObject = {Usernamelogin, Passwordlogin};
 
     // tslint:disable-next-line: max-line-length
-    this.http.post<{message: string, token: any, flag: string, tokenTimer: number, channel: string, UserName: string}>('http://localhost:3000/api/auth/signin', reqObject)
+    this.http.post<{message: string, token: any, flag: string, tokenTimer: number, channel: string, UserName: string}>('https://app-warehouse-backend.herokuapp.com/api/auth/signin', reqObject)
         .subscribe((response) => {
           if(response.flag === 'true') {
 
@@ -48,6 +48,7 @@ export class AuthServiceService {
     localStorage.removeItem('Token');
     localStorage.removeItem('AuthStatus');
     localStorage.removeItem('AppChannel');
+    localStorage.removeItem('UserName');
     this.router.navigate(['auth/signin']);
    }
 

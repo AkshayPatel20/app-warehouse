@@ -1,0 +1,45 @@
+<div class="window">
+
+  <mat-card class="example-card">
+
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+
+      <mat-card-title>Forums</mat-card-title>
+
+      <mat-card-subtitle style="color:#A142F4" id="SubTitleMessage">Give Your New Idea a Meaning</mat-card-subtitle>
+      <span class="example-spacer"></span>
+
+      <button mat-fab style="font-size: 30px;color:white; background-color: #008000;" matTooltip="Online Users">
+        {{ connectedUser }}
+      </button>
+    </mat-card-header>
+
+    <mat-card-content id="ContentMessageDiv">
+
+<!-- MESSAGE START -->
+
+<div id="message-wrap"></div>
+
+<!-- MESSAGE END -->
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+      <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+          <input matInput #message maxlength="256" placeholder="Express Your Idea" (keyup.enter)="onEnterPress(message.value)" [(ngModel)]="postMessageValue" name="message" (keyup)="onkeyUp()">
+          <mat-hint align="start"><strong></strong> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+        </mat-form-field>
+
+      </form>
+
+    </mat-card-actions>
+
+  </mat-card>
+
+
+</div>

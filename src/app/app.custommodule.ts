@@ -20,6 +20,10 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -40,7 +44,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatBottomSheetModule,
     MatChipsModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatExpansionModule,
+    MatBadgeModule,
+    MatTooltipModule
   ],
   exports: [
     FlexLayoutModule,
@@ -60,7 +68,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatBottomSheetModule,
     MatChipsModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatExpansionModule,
+    MatBadgeModule,
+    MatTooltipModule
   ]
 })
 export class CustomModule { }

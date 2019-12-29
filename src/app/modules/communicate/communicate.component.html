@@ -2,7 +2,7 @@
 <!-- Mail Compose Btn -->
 <button mat-raised-button class="composeBtn" (click)="openEmailBox()"> <mat-icon color="accent">add</mat-icon> Compose</button>
 
-<mat-tab-group>
+<mat-tab-group [selectedIndex]="3" >
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon tabIcons" style="color:#D93025">inbox</mat-icon>
@@ -13,18 +13,27 @@
 
   <mat-tab>
     <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon tabIcons" style="color:#1A73E8">send</mat-icon>
-      Sent
+      <mat-icon class="example-tab-icon tabIcons" style="color:#1765CD">send</mat-icon>
+      Sent <span mat-chip style="margin-left: 8px;background-color: #1765CD;color: white;">{{ sentcount }}</span>
     </ng-template>
-    <!-- Sent -->
+      <app-sent-email (SentCount)="onsentCountData($event)"></app-sent-email>
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon tabIcons" style="color:#188038">chat</mat-icon>
-      Social
+      Drafts <span mat-chip style="margin-left: 8px;background-color: #188038;color: white;">{{ draftcount }}</span>
     </ng-template>
+    <app-draft-email (DraftCount)="ondraftCountData($event)"></app-draft-email>
+    <!-- Content 3 -->
+  </mat-tab>
 
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon tabIcons" style="color:#A142F4">forum</mat-icon>
+      Forums
+    </ng-template>
+    <app-forum-messages></app-forum-messages>
     <!-- Content 3 -->
   </mat-tab>
 </mat-tab-group>

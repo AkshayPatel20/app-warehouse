@@ -1,0 +1,29 @@
+.member-count-style {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #1A73E8;
+}
+
+.mat-card-sentbody {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+.mail-body {
+  margin-left: 54px;
+}
+
+.example-header-image {
+  background-image: url('http://www.gec.co/wp-content/uploads/2019/02/Speaker_Default.png');
+  background-size: cover;
+}
+
+.mat-menu-item {
+  width:100vw !important;
+  overflow: scroll-x !important;
+}
+
+.chipSubject {
+  background-color: #1A73E8;
+  color: white;
+}
